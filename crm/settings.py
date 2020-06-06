@@ -10,11 +10,24 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
+# add this to the import section of the file
 import os
+from django.core.exceptions import ImproperlyConfigured
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+# Handling Key Import Errors
+def get_env_variable(var_name):
+    """ Get the environment variable or return exception """
+    try:
+        return os.environ[var_name]
+    except KeyError:
+        error_msg = "Set the %s environment variable" % var_name
+        raise ImproperlyConfigured(error_msg)
+
+# Get ENV VARIABLES key
+ENV_ROLE = get_env_variable('ENV_ROLE')
+print("=================  ENV_ROLE = ", get_env_variable('ENV_ROLE'), "  =========================" )
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -22,11 +35,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '81$e5-j)bqr^+u)6paqxnd3savb98wn!rjt2(n67zgbrg$mq(6'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False
+TEMPLATE_DEBUG = DEBUG
+if ENV_ROLE == 'development':
+    DEBUG = True
+    TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = ["localhost","127.0.0.1"]
 
+print("================ DEBUG = ", DEBUG, " ============================" )
 
 # Application definition
 
