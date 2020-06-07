@@ -22,7 +22,7 @@ def get_env_variable(var_name):
     try:
         return os.environ[var_name]
     except KeyError:
-        error_msg = "Set the %s environment variable" % var_name
+        error_msg = "Yo. Set the %s environment variable" % var_name
         raise ImproperlyConfigured(error_msg)
 
 # Get ENV VARIABLES key
@@ -33,18 +33,21 @@ print("=================  ENV_ROLE = ", get_env_variable('ENV_ROLE'), "  =======
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '81$e5-j)bqr^+u)6paqxnd3savb98wn!rjt2(n67zgbrg$mq(6'
+SECRET_KEY = get_env_variable('SECRET_KEY')
 
 #SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
+CRMEASY_DB_PASS = False
 if ENV_ROLE == 'development':
     DEBUG = True
     TEMPLATE_DEBUG = DEBUG
+    CRMEASY_DB_PASS = get_env_variable('CRMEASY_DB_PASS')
 
 ALLOWED_HOSTS = ["localhost","127.0.0.1"]
 
 print("================ DEBUG = ", DEBUG, " ============================" )
+print("================ Pass = ", CRMEASY_DB_PASS, " ============================" )
 
 # Application definition
 
@@ -115,8 +118,8 @@ else:
             'HOST': 'localhost',
             'PORT': '3306',
             'NAME': 'crmdb',
-            'USER': 'root',
-            'PASSWORD': '',
+            'USER': 'test',
+            'PASSWORD': CRMEASY_DB_PASS,
         }
     }
 # [END db_setup]
