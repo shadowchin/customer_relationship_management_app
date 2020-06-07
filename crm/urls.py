@@ -16,35 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-# urlpatterns = [
-#     path('admin/', admin.site.urls),
-# ]
-
-#from marketing.views import HomePage
-from . import views
-
 urlpatterns = [
     # Admin site
     path('admin/', admin.site.urls),
 
-    # Marketing pages
-    path('marketing/', views.HomePage.as_view(), name="home"),
+]
 
-    # Subscriber related URLs
+# Use include() to add paths from the catalog application 
+"""
+we included the import line (from django.urls import include) 
+with the code that uses it (so it is easy to see what we've added), 
+but it is common to include all your import lines at the top of a Python file.
+"""
+from django.urls import include
 
-
-    # Admin URL
-
-
-    # Login/Logout URLs
-
-
-    # Account related URLs
-
-
-    # Contact related URLS
-
-
-    # Communication related URLs
-
+urlpatterns += [
+    path('', include('marketing.urls')),
 ]
