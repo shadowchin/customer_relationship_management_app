@@ -13,6 +13,3 @@ class HomePage(TemplateView):
     """
     template_name = 'marketing/home.html'
 
-def index(request):
-    print("hello")
-    return render(request, 'index.html', {})

@@ -5,7 +5,7 @@ urlpatterns = [
     #path('', views.index, name='index'),
 
     # Marketing pages
-    path('', views.HomePage.as_view(), name="marketing/home"),
+    path('', views.HomePage.as_view(), name="HomePage"),
 
     # Subscriber related URLs
 
