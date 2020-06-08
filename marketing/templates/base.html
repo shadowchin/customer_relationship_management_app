@@ -1,10 +1,10 @@
 {# HTNL5 declaration #}
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     {# Make modifiable head elements #}
-    {% load static %}
+    
     {% block head_favicon %}
         <link rel="icon" type="image/png">
     {% endblock head_favicon %}
@@ -34,6 +34,9 @@
         {% endblock head_css_page %}
 
     {% endblock head_css %}
+    <title>
+        {% block title %}{% endblock %}
+    </title>
 </head>
 <body>
     {# Navigation Menu #}
@@ -48,7 +51,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/"></a>
+                <a class="navbar-brand" href="/">
                     CRM Easy
                 </a>
             </div>
@@ -84,9 +87,9 @@
     {# Set of blocks that can be used to display Javascript files #}
     {% block footer_javascript %}
         {% block footer_javascript_site %}
-            <script src="{{ STATIC_URL }}js/jquery.min.js"></script>
-            <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
-            <script src="{{ STATIC_URL }}js/app.min.js"></script>    
+            <script src="{% static 'js/jquery.min.js' %}"></script>
+            <script src="{% static 'js/bootstrap.min.js' %}"></script>
+            <script src="{% static 'js/app.min.js' %}"></script>    
         {% endblock footer_javascript_site %}
         {% block footer_javascript_section %}{% endblock footer_javascript_section %}
         {% block footer_javascript_page %}{% endblock footer_javascript_page %}
