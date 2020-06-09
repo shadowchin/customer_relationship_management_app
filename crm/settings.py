@@ -46,7 +46,7 @@ if ENV_ROLE == 'development':
     TEMPLATE_DEBUG = DEBUG
     CRMEASY_DB_PASS = get_env_variable('CRMEASY_DB_PASS')
 
-ALLOWED_HOSTS = ["localhost","127.0.0.1"]
+ALLOWED_HOSTS = ['*']
 
 print("================ DEBUG = ", DEBUG, " ============================" )
 print("================ Pass = ", CRMEASY_DB_PASS, " ============================" )
