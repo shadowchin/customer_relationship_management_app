@@ -34,8 +34,7 @@ print("=================  ENV_ROLE = ", get_env_variable('ENV_ROLE'), "  =======
 
 # SECURITY WARNING: keep the secret key used in production secret!
 print("===========================================")
-#SECRET_KEY = get_env_variable('SECRET_KEY')
-SECRET_KEY = '81$e5-j)bqr+u)6paqxnd3savb98wn!rjt2(n67zgbrg$mq(6'
+SECRET_KEY = get_env_variable('SECRET_KEY')
 
 #SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -61,6 +60,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'marketing',
+
 ]
 
 MIDDLEWARE = [
@@ -176,3 +176,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = 'static'
 
+# Redirect to home URL after login (Default redirects to /accounts/profile/)
+LOGIN_REDIRECT_URL = '/'
+
+# settings.py
+EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")

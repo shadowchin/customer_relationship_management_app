@@ -1,4 +1,6 @@
 from django.urls import path
+from django.contrib import admin
+from django.urls import include
 from . import views
 
 urlpatterns = [
@@ -24,4 +26,11 @@ urlpatterns = [
 
     # Communication related URLs
     
+]
+
+#Add Django site authentication urls (for login, logout, password management)
+
+#Add Django site authentication urls (for login, logout, password management)
+urlpatterns += [
+    path('accounts/', include('django.contrib.auth.urls')),
 ]

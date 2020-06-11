@@ -1,0 +1,12 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Password reset on localhost:8000
+From: webmaster@localhost
+To: shadowchin@gmail.com
+Date: Thu, 11 Jun 2020 10:41:42 -0000
+Message-ID: <159187210208.11392.8826081644146498467@LAPTOP-ESRQ4OKN>
+
+Someone asked for password reset for email shadowchin@gmail.com. Follow the link below:
+http://localhost:8000/accounts/reset/MQ/5h9-06824f67010f6f32db00/
+-------------------------------------------------------------------------------
