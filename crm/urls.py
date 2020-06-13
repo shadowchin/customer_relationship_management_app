@@ -32,4 +32,8 @@ from django.urls import include
 
 urlpatterns += [
     path('', include('marketing.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('subscribers/', include('subscribers.urls')),
 ]
+
+#Add URL maps to redirect the base URL to our application

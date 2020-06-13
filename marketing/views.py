@@ -12,4 +12,3 @@ class HomePage(TemplateView):
     in the next lesson.
     """
     template_name = 'marketing/home.html'
-

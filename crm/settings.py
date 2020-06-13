@@ -39,16 +39,16 @@ SECRET_KEY = get_env_variable('SECRET_KEY')
 #SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
-CRMEASY_DB_PASS = False
+DB_PASS = False
 if ENV_ROLE == 'development':
     DEBUG = True
     TEMPLATE_DEBUG = DEBUG
-    CRMEASY_DB_PASS = get_env_variable('CRMEASY_DB_PASS')
+    DB_PASS = get_env_variable('DB_PASS')
 
 ALLOWED_HOSTS = ['*']
 
 print("================ DEBUG = ", DEBUG, " ============================" )
-print("================ Pass = ", CRMEASY_DB_PASS, " ============================" )
+print("================ Pass = ", DB_PASS, " ============================" )
 
 # Application definition
 
@@ -128,7 +128,7 @@ else:
             'PORT': '3306',
             'NAME': 'crmdb',
             'USER': 'test',
-            'PASSWORD': CRMEASY_DB_PASS,
+            'PASSWORD': DB_PASS,
         }
     }
 # [END db_setup]

@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 
 from .forms import SubscriberForm
 
-def subscriber_new(request, template='subscribers/subscriber_new.html'):
+def subscriber_new(request, template='subscriber_new.html'):
     if request.method == 'POST':
         form = SubscriberForm(request.POST)
         if form.is_valid():
@@ -24,3 +24,6 @@ def subscriber_new(request, template='subscribers/subscriber_new.html'):
         form = SubscriberForm()
 
     return render(request, template, {'form':form})
+
+def sub(request):
+    return render(request,'sub.html', {})

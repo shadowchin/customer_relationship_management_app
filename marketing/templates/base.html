@@ -51,7 +51,7 @@
 example 3 - Navbar with brand left, links on center and right that collapse into the vert mobile menu
 -->
 <nav class="navbar navbar-light navbar-expand-md navbar-dark bg-dark justify-content-center">
-    <a href="/" class="navbar-brand d-flex w-50 mr-auto">Shadow's Site</a>
+    <a href="/" class="navbar-brand d-flex w-50 mr-auto">Shadow's Project Site</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -69,6 +69,8 @@ example 3 - Navbar with brand left, links on center and right that collapse into
                 <a class="nav-link" href="{% url 'login'%}?next={{request.path}}">Login</a>
             </li>
             {% endif %}
+            <li class="nav-item">
+                <a href="{% url 'subscriber_new'%}" class="nav-link">Sign Up</a></li>
             <li class="nav-item">
                 <a class="nav-link" href="#">About us</a>
             </li>
