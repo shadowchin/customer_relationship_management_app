@@ -11,4 +11,4 @@ class HomePage(TemplateView):
     assign one value; template_name. The home.html file will be created
     in the next lesson.
     """
-    template_name = 'marketing/home.html'
+    template_name = 'marketing/index.html'

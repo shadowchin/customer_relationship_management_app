@@ -1,0 +1,134 @@
+{# HTNL5 declaration #}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {# Make modifiable head elements #}
+    
+    {% block head_favicon %}
+        <link rel="icon" type="image/png">
+    {% endblock head_favicon %}
+    {% block head_meta %}
+        {% block head_meta_charset %}
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        {% endblock head_meta_charset %}
+        {% block head_meta_contentlanguage %}
+            <meta http-equiv="Content-Language" value="en-US" />
+        {% endblock head_meta_contentlanguage %}
+        {% block head_meta_viewport %}
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% endblock head_meta_viewport %}
+    {% endblock head_meta %}
+    {% block head_css %}
+        {% block head_css_site %}
+        
+            <link href="{% static 'css/bootstrap.css' %}" 
+                    rel="stylesheet" media="screen">
+            <link href="{% static 'css/bootstrap-grid.css' %}" 
+                    rel="stylesheet" media="screen">
+            <link href="{% static 'css/bootstrap-grid.min.css' %}" 
+                    rel="stylesheet" media="screen">
+            <link href="{% static 'css/app.css' %}" 
+                    rel="stylesheet" media="screen">
+            <link href="{% static 'css/bootstrap.min.css' %}" 
+                    rel="stylesheet" media="screen">
+        {% endblock head_css_site %}
+        
+        {% block head_css_section %}            
+        {% endblock head_css_section %}
+
+        {% block head_css_page %}            
+        {% endblock head_css_page %}
+
+    {% endblock head_css %}
+    <title>
+        {% block title %}{% endblock %}
+    </title>
+</head>
+<body>
+    {# Navigation Menu #}
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+            <div class="container">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                    aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav mr-auto smooth-scroll">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#intro">Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about" data-offset="90">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projects" data-offset="90">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#gallery" data-offset="90">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#testimonials" data-offset="30">Testimonials</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#articles" data-offset="90">Articles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact" data-offset="90">Contact</a>
+                        </li>
+                    </ul>
+                    <!-- Social Icon  -->
+                    <ul class="navbar-nav nav-flex-icons">
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <i class="fab fa-facebook light-green-text-2"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <i class="fab fa-twitter light-green-text-2"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <i class="fab fa-instagram light-green-text-2"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+          
+    {# The Document Body #}
+    <div id="site-wrapper">
+        {% block content %}
+            If you see this, something is wrong!!
+        {% endblock content %}
+    </div>
+    {# The Footer #}
+    <div class="footer">
+        <div class="container">
+            <p>Copyright CRM Easy</p>
+        </div>
+    </div>
+</body>
+    {# Set of blocks that can be used to display Javascript files #}
+    {% block footer_javascript %}
+        {% block footer_javascript_site %}
+        
+            <script src="{% static 'js/bootstrap.min.js' %}"></script>  
+            <script src="{% static 'js/jquery.min.js' %}"></script>
+            <script src="{% static 'js/bootstrap.js' %}"></script>
+            <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+            <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+            <script src="{% static 'js/app.min.js' %}"></script>  
+        {% endblock footer_javascript_site %}
+        {% block footer_javascript_section %}{% endblock footer_javascript_section %}
+        {% block footer_javascript_page %}{% endblock footer_javascript_page %}
+    {% endblock footer_javascript %}
+
+</html>

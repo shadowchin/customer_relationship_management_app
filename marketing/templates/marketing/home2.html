@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home2{% endblock %}
+
+
+{% block content %}  
+<div class="container my-4">
+
+    <p class="font-weight-bold">Bootstrap tiles provide a flexible and extensible content container with multiple
+      variants. </p>
+
+    <p><strong>Detailed documentation and more examples of Bootstrap feed you can find in our <a href="https://mdbootstrap.com/docs/jquery/components/panels/"
+          target="_blank">Bootstrap Panels Docs</a>.</p>
+
+    <hr class="my-5">
+
+    <h2 class="my-5 h2">Tile columns</h2>
+
+    <div class="card-columns text-white">
+      <div class="card mt-2 mb-3 green">
+        <div class="card-body">
+          <h5 class="card-title">Panel title that wraps to a new line</h5>
+          <p>This is a longer card with supporting text below as a natural lead-in to additional content. This content
+            is a little bit longer.</p>
+        </div>
+      </div>
+      <div class="card p-3 mb-3 indigo">
+        <blockquote class="blockquote mb-0 card-body">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        </blockquote>
+      </div>
+      <div class="card mb-3 red">
+        <div class="card-body">
+          <h5 class="card-title">Panel title</h5>
+          <p>This card has supporting text below as a natural lead-in to additional content.</p>
+          <p><small>Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      <div class="card blue text-center p-3 mt-2 mb-3">
+        <blockquote class="blockquote mb-0">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+        </blockquote>
+      </div>
+      <div class="card text-center mb-3 pink">
+        <div class="card-body">
+          <h5 class="card-title">Panel title</h5>
+          <p>This card has a regular title and short paragraphy of text below it.</p>
+          <p><small>Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      <div class="card mb-3 purple">
+        <div class="card-body">
+          <h5 class="card-title">Panel title that wraps to a new line</h5>
+          <p>This is a longer card with supporting text below as a natural lead-in to additional content. This content
+            is a little bit longer.</p>
+        </div>
+      </div>
+      <div class="card p-3 text-right mt-2 mb-3 deep-purple">
+        <blockquote class="blockquote mb-0">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        </blockquote>
+      </div>
+      <div class="card mb-3 cyan">
+        <div class="card-body">
+          <h5 class="card-title">Panel title</h5>
+          <p>This is another card with title and supporting text below. This card has some additional content to make
+            it slightly taller overall.</p>
+          <p><small>Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      <div class="card text-center mb-3 deep-orange">
+        <div class="card-body">
+          <h5 class="card-title">Panel title</h5>
+          <p>This card has a regular title and short paragraphy of text below it.</p>
+          <p><small>Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock content %}
