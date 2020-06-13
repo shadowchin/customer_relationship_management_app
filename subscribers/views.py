@@ -19,7 +19,7 @@ def subscriber_new(request, template='subscriber_new.html'):
             # Create Subscriber Record
             # Process payment (via Stripe)
             # Auto login the user
-            return HttpResponseRedirect('/success/')
+            return HttpResponseRedirect('/')
     else:
         form = SubscriberForm()
 
