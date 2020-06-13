@@ -10,7 +10,7 @@ urlpatterns = [
     path('', views.HomePage.as_view(), name="HomePage"),
 
     # Subscriber related URLs
-
+    path(r'^signup/$', 'subscribers.views.subscriber_new', name='sub_new'),
 
     # Admin URL
 
