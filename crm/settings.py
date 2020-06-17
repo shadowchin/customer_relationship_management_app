@@ -60,7 +60,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'marketing',
-    'subscribers'
+    'subscribers',
 ]
 
 MIDDLEWARE = [
@@ -173,8 +173,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+#DataFlair #Django #Static files
 STATIC_URL = '/static/'
-STATIC_ROOT = 'static'
+#--------------------------------------------------
+STATIC_ROOT = os.path.join(BASE_DIR, 'root')
+#-----------------------------------------------------
+STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'static'),
+        os.path.join(BASE_DIR, 'boot'),
+]
+
+BOOTSTRAP3 = { 'theme_url':
+              'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css', }
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 LOGIN_REDIRECT_URL = '/'
